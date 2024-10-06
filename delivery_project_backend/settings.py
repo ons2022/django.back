@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'corsheaders',
+    'rest_framework.authtoken',
+    
+   
 ]
 
 MIDDLEWARE = [
@@ -47,7 +52,15 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware', 
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.security.SecurityMiddleware',
 ]
+# CORS settings
+CORS_ALLOW_ALL_ORIGINS = True
+
+
+
 
 ROOT_URLCONF = 'delivery_project_backend.urls'
 
@@ -68,6 +81,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'delivery_project_backend.wsgi.application'
+
+
 
 
 # Database
